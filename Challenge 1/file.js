@@ -29,35 +29,25 @@ const STATUS_MAP = {
 
 // Edit below line 
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+const status = selector('status');
+const reserve = selector('reserve');
+const checkout = selector('checkout');
+const checkin = selector('checkin');
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+status[0].style.color = STATUS_MAP.status.color;
+reserve[0].disabled = STATUS_MAP.status.canReserver ? false : true;
+checkout[0].disabled = STATUS_MAP.status.canCheckout ? false : true;
+checkin[0].disabled = STATUS_MAP.status.canCheckIn ? false : true;
 
-checkin.0.color = none
-status.0.style.color = STATUS_MAP.status.color
-reserve.0 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.0 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.0 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
 
-checkin.1.color = none
-status.1.style.color = STATUS_MAP.status.color
-reserve.1 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.1 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.1 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+status[1].style.color = STATUS_MAP.status.color;
+reserve[1] = STATUS_MAP.status.canReserver ? false : true;
+checkout[1] = STATUS_MAP.status.canCheckout ? false : true;
+checkin[1] = STATUS_MAP.status.canCheckIn ? false : true;
 
-checkin.2.color = none
-status.2.style.color = STATUS_MAP.status.color
-reserve.2 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.2 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.2 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+
+status[2].style.color = STATUS_MAP.status.color
+reserve[2].disabled = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
+checkout[2].disabled = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
+checkin[2].disabled = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
