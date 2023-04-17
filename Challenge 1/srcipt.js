@@ -1,4 +1,5 @@
- // scripts.js
+
+// scripts.js
 
 const STATUS_MAP = {
     shelf: {
@@ -27,29 +28,16 @@ const STATUS_MAP = {
     }
 }
 
-// Edit below line 
+// Update the following lines to correctly select and update the elements
 
-// Select DOM elements
-const status = document.querySelector('.status');
-const reserve = document.querySelector('.reserve');
-const checkout = document.querySelector('.checkout');
-const checkin = document.querySelector('.checkin');
+const statusElement = selector(status); // Update to select the correct element for status
+const reserveElement = selector(reserve); // Update to select the correct element for reserve
+const checkoutElement = selector(checkout); // Update to select the correct element for checkout
+const checkinElement = selector(checkin); // Update to select the correct element for checkin
 
-// Update status, color, and enable/disable buttons based on STATUS_MAP
-status.textContent = 'shelf';
-status.style.color = STATUS_MAP[status.textContent].color;
+// Update the status text color and button enable/disable based on the status map
 
-reserve.disabled = !STATUS_MAP[status.textContent].canReserve;
-checkout.disabled = !STATUS_MAP[status.textContent].canCheckout;
-checkin.disabled = !STATUS_MAP[status.textContent].canCheckIn;
-
-// Add event listeners for status change
-status.addEventListener('change', function() {
-    const selectedStatus = this.value;
-
-    // Update status, color, and enable/disable buttons based on selected status
-    status.style.color = STATUS_MAP[selectedStatus].color;
-    reserve.disabled = !STATUS_MAP[selectedStatus].canReserve;
-    checkout.disabled = !STATUS_MAP[selectedStatus].canCheckout;
-    checkin.disabled = !STATUS_MAP[selectedStatus].canCheckIn;
-});
+statusElement.style.color = STATUS_MAP[status].color; // Update to get the color from the status map
+reserveElement.disabled = !STATUS_MAP[status].canReserve; // Update to get the canReserve value from the status map
+checkoutElement.disabled = !STATUS_MAP[status].canCheckout; // Update to get the canCheckout value from the status map
+checkinElement.disabled = !STATUS_MAP[status].canCheckIn; // Update to get the canCheckIn value from the status map
